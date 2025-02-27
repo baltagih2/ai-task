@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { ChevronLeft, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/constants";
 import { useCart } from "@/cart-context";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id === Number.parseInt(params.id));
+export default function ProductPage() {
+  const params = useParams();
+  const product = products.find(
+    (p) => p.id === Number.parseInt((params?.id as string) || "")
+  );
   const { addToCart } = useCart();
 
   if (!product) {

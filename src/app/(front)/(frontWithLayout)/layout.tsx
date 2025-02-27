@@ -18,24 +18,24 @@ export default function FrontLayout({
                 </span>
               </Link>
               <nav className="flex items-center space-x-6 text-sm font-medium">
-                <a
+                <Link
                   className="transition-colors hover:text-foreground/80 text-foreground"
                   href="/products"
                 >
                   Products
-                </a>
-                <a
+                </Link>
+                <Link
                   className="transition-colors hover:text-foreground/80 text-foreground/60"
                   href="/about"
                 >
                   About
-                </a>
-                <a
+                </Link>
+                <Link
                   className="transition-colors hover:text-foreground/80 text-foreground/60"
                   href="/contact"
                 >
                   Contact
-                </a>
+                </Link>
               </nav>
             </div>
             <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -87,24 +87,24 @@ export default function FrontLayout({
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="text-slate-400 hover:text-white">
+                    <Link href="#" className="text-slate-400 hover:text-white">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-slate-400 hover:text-white">
+                    <Link href="#" className="text-slate-400 hover:text-white">
                       Shop
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-slate-400 hover:text-white">
+                    <Link href="#" className="text-slate-400 hover:text-white">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-slate-400 hover:text-white">
+                    <Link href="#" className="text-slate-400 hover:text-white">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

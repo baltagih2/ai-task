@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,11 +22,8 @@ import {
 import { Order } from "@/interfaces";
 import { getOrders } from "@/orders";
 
-export default function OrderDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function OrderDetailsPage() {
+  const params = useParams();
   const router = useRouter();
   const [order, setOrder] = useState<Order>();
 
@@ -46,6 +43,7 @@ export default function OrderDetailsPage({
   }
 
   const handleStatusChange = (newStatus: Order["status"]) => {
+    // @ts-expect-error ignoring temporarily
     setOrder((prevOrder) => ({ ...prevOrder, status: newStatus }));
     // Here you would typically make an API call to update the order status
     console.log(`Order ${order.id} status updated to ${newStatus}`);

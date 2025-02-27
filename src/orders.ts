@@ -8,6 +8,5 @@ export const addToOrders = (order: Order) => {
 };
 
 export const getOrders = () => {
-  console.log("Getting orders...", orders);
   return orders;
 };
